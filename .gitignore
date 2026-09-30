@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+demo/uploads/*
+.env
+.DS_Store
+
+models/*.onnx
+models/*.pt

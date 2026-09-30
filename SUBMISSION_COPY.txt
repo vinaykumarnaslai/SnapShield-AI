@@ -1,0 +1,29 @@
+SNAPDRAGON AI LAB BUILD & PRESENT CHALLENGE - SUBMISSION COPY
+
+Project Title
+SnapShield AI - On-Device Privacy Redaction for Snapdragon PCs
+
+Brief Project Description (411/500 characters)
+SnapShield AI is a privacy-first computer vision application for Snapdragon-powered HP Windows PCs. It detects faces and privacy-sensitive objects locally and produces a redacted image without sending the source to a cloud service. The prototype uses YOLOv5n in ONNX format, prefers ONNX Runtime's Qualcomm QNN Execution Provider/HTP NPU backend on Snapdragon, and keeps a CPU fallback for portable development.
+
+GitHub Repository Link
+Create a public GitHub repository named: SnapShield-AI
+Upload the contents of the provided project package, then paste the actual repository URL in the form.
+
+Snapdragon Laptop field
+The challenge listing says the participant should own a Snapdragon-powered laptop. Select the field only according to your actual hardware ownership.
+
+Before submitting
+1. Unzip SnapShield_AI_Project.zip.
+2. On your Windows PC, create/activate a Python environment.
+3. Install requirements.txt.
+4. Run: python scripts/download_model.py
+5. Run: python run.py
+6. Open http://127.0.0.1:5000 and test an image.
+7. For Snapdragon deployment, use Windows ARM64 + requirements-snapdragon.txt and verify QNNExecutionProvider on the actual device.
+8. Push the project to GitHub and paste the real repository URL.
+9. Upload the DOCX (or its PDF version) as the brief description.
+10. Upload the PPTX and PDF pitch files.
+
+Important claim boundary
+The 14.8 ms / 47 MB / NPU figures in the pitch are Qualcomm AI Hub reference measurements for its published YOLOv5 Snapdragon X Elite profile. They are not measurements from this prototype.

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SnapShield AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <div class="eyebrow">SNAPDRAGON AI LAB BUILD & PRESENT</div>
+        <h1>SnapShield AI</h1>
+        <p class="subtitle">On-device privacy redaction for Snapdragon-powered Windows PCs.</p>
+      </div>
+      <div class="status" id="status">Checking runtime...</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="pill">Privacy first</span>
+        <h2>Protect sensitive visuals before they leave your device.</h2>
+        <p>Upload an image, detect privacy-sensitive regions locally, and export a redacted copy. QNN is preferred on Snapdragon; CPU fallback keeps development portable.</p>
+      </div>
+      <div class="metrics">
+        <div><strong id="runtime">-</strong><span>Execution provider</span></div>
+        <div><strong id="target">-</strong><span>Target backend</span></div>
+        <div><strong id="model">-</strong><span>Model</span></div>
+      </div>
+    </section>
+
+    <section class="card controls">
+      <div class="control-row">
+        <label class="upload">
+          <input type="file" id="file" accept="image/*">
+          <span>Select image</span>
+        </label>
+        <label>Policy
+          <select id="policy">
+            <option value="people">People + faces</option>
+            <option value="people_devices">People + faces + devices</option>
+            <option value="privacy_max">Maximum privacy</option>
+          </select>
+        </label>
+        <button id="analyze" disabled>Analyze & redact</button>
+      </div>
+      <div class="hint">QNN/HTP is used when the Snapdragon QNN provider is installed. CPU remains available as a fallback for development and portability.</div>
+    </section>
+
+    <section class="results">
+      <div class="panel"><div class="panel-title">Original</div><div class="canvas" id="original"><span>No image selected</span></div></div>
+      <div class="panel"><div class="panel-title">Redacted output</div><div class="canvas" id="redacted"><span>Run analysis to see result</span></div></div>
+    </section>
+
+    <section class="card result-bar">
+      <div><span>Redaction regions</span><strong id="count">0</strong></div>
+      <div><span>Faces</span><strong id="faces">0</strong></div>
+      <div><span>Inference + redaction</span><strong id="latency">-</strong></div>
+      <div class="export"><a id="download" download="snapshield-redacted.jpg" hidden>Download redacted image</a></div>
+    </section>
+
+    <footer>SnapShield AI • Prototype for Snapdragon-powered HP PCs • ONNX Runtime + QNN-ready architecture</footer>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
